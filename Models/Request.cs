@@ -8,7 +8,10 @@ namespace AgileWorksiTest.Models
         public string Description { get; set; }
         public DateTime WhenMade { get; set; } = DateTime.Now;
         public DateTime WhenFinish { get; set; }
-        public double TimeLeft { get; set; }
+        public double TimeLeft { get{
+            var dif = WhenFinish - DateTime.Now;
+            return dif.TotalHours;
+        } }
         //public User Customer { get; set; }
         public bool Status { get; set; } = false;
     }

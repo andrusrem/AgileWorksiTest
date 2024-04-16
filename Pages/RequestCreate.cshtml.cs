@@ -41,9 +41,8 @@ public class RequestCreateModel : PageModel
             int nextId = await RequestService.GiveId(BaseUrl);
             id = nextId;
         }
-        TimeSpan dif = WhenFin - DateTime.Now;
-        double hours = dif.TotalHours;
-        var newRequest = await RequestService.PostRequest(BaseUrl, new { Id = id,Description = Desc, WhenFinish = WhenFin, TimeLeft = hours});
+
+        var newRequest = await RequestService.PostRequest(BaseUrl, new { Id = id,Description = Desc, WhenFinish = WhenFin});
 
         return RedirectToPage("Index");
 
