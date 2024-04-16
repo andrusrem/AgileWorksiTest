@@ -50,6 +50,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.CodeCoverage": {
+              "target": "Package",
+              "version": "[16.8.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.12, )"
@@ -70,9 +78,31 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.8.3, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.12, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.0, )"
+            },
+            "XunitXml.TestLogger": {
+              "target": "Package",
+              "version": "[2.1.26, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
             }
           },
           "imports": [

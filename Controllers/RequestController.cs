@@ -9,11 +9,12 @@ namespace AgileWorksiTest.Controllers
     public class RequestController : ControllerBase
     {
         public static List<Request> Requests = new List<Request>();
-
+        
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(Requests);
+            
         }
 
         [HttpGet("{id}")]

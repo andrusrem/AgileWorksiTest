@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<!DOCTYPE html>
+<body>
 
 
 <table class="table">
@@ -35,7 +37,7 @@
                         {
                             <td>@request.Description</td>
                         }
-                        <td scope="row">@request.Deadline hours</td>
+                        <td scope="row">@request.Deadline</td>
                         <td>
                             @if (request.Status == false)
                             {
@@ -68,3 +70,4 @@
 
          
 </table>
+</body>
