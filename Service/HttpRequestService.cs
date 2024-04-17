@@ -3,11 +3,11 @@ using System.Text;
 
 namespace AgileWorksiTest.Service
 {
-    public class HttpRequestService
+    public class HttpRequestService : IHttpRequestService
     {
-        private static readonly HttpClient _httpClient = new HttpClient();
+        private readonly HttpClient _httpClient = new HttpClient();
 
-        public static async Task<T> SendRequest<T>(string url, HttpMethod method, object data = null)
+        public async Task<T> SendRequest<T>(string url, HttpMethod method, object data = null)
         {
 
             var request = new HttpRequestMessage(method, url);

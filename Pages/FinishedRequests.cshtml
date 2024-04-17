@@ -1,0 +1,70 @@
+﻿@page
+@model FinishedRequestsModel
+@{
+    ViewData["Title"] = "Finished Request List";
+}
+
+<!DOCTYPE html>
+<body>
+    @if (@Model.FinishedRequestList.Count != 0)
+    {
+        <table class="table table-bordered rounded-circle table-hover table-dark">
+
+
+
+            <thead>
+                <tr>
+
+                    <th scope="col">Description</th>
+                    <th scope="col"> Time Lefted Before Deadline</th>
+                    <th scope="col">Status</th>
+
+                </tr>
+            </thead>
+            @foreach (var request in @Model.FinishedRequestList)
+            {
+
+                @if (request.Status == true)
+                {
+                    <tbody>
+                        @if (request.TimeLeft.TotalSeconds >= 0)
+                        {
+                            <tr class="table-success">
+                                <td>@request.Description</td>
+                                <td scope="row">@request.Deadline</td>
+
+                                <td><p>Done in time!</p></td>
+
+
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr class="table-danger">
+                                <td>@request.Description</td>
+                                <td scope="row">@request.Deadline</td>
+
+                                <td><p>Missed! Need improve timing!</p></td>
+
+
+                            </tr>
+                        }
+
+                        
+                        
+                    </tbody>
+                }
+                else
+                {
+                    continue;
+                }
+
+
+            }
+        </table>
+    }
+    else
+    {
+        <h4 class="text-md-center">Here is no finished requests, you need hurry up to done some.</h4>
+    }
+</body>

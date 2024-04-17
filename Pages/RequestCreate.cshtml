@@ -6,17 +6,17 @@
 <!DOCTYPE html>
 <body>
 
-<div class="container d-flex justify-content-center">
-    
-    <form method="post" class="form-horizontal">
+    <div class="container d-flex text-center mx-auto justify-content-center">
+
+        <form method="post" class="form-horizontal border border-2 rounded-3 p-4 bg-secondary text-white">
         <h2>Create your request</h2>
         <div class="form-group mx-auto">
             <label for="Desc" class="control-label col-sm-3">Description</label>
-            <div class="col-sm-8">
+            <div class="col-sm-8 mx-auto">
                 <textarea type="text" asp-for="Desc" class="form-control" rows="3" ></textarea>
             </div>
             <label for="WhenFin">When must be done</label>
-            <div class="col-sm-8">
+            <div class="col-sm-8 mx-auto">
                 <input type="datetime-local"
                        id="WhenFin"
                        name="WhenFin"
@@ -25,7 +25,7 @@
                        max="2025-06-14T00:00"></input>
             </div>
 
-            <div class="col-sm-offset-2 col-sm-8 mt-2">
+            <div class="col-sm-offset-2 col-sm-8 mt-2 mx-auto">
                 <input type="submit" value="Submit" class="btn btn-success" />
             </div>
         </div>

@@ -10,8 +10,16 @@ namespace AgileWorksiTest.Models
         public DateTime WhenMade { get; set; } = DateTime.Now;
         public DateTime WhenFinish { get; set; }
         public TimeSpan TimeLeft { get{
-            var dif = WhenFinish - DateTime.Now;
-            return dif;
+                if (Status == false)
+                {
+                    var dif = WhenFinish - DateTime.Now;
+                    return dif;
+                }
+                else {
+                    var dif = WhenFinish - WhenMade;
+                    return dif;
+                }
+           
             } }
         public string Deadline
         {

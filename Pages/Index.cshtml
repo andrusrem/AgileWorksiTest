@@ -5,69 +5,84 @@
 }
 <!DOCTYPE html>
 <body>
-
-
-<table class="table">
-
     @if (@Model.RequestList.Count != 0)
     {
-        
-        <thead>
-            <tr>
-                
-                <th scope="col">Desc</th>
-                <th scope="col">Deadline</th>
-                <th scope="col">Status</th>
-                <th scope="col">Is it Done?</th>
+        <table class="table table-bordered table-hover table-dark">
 
-            </tr>
-        </thead>
-        @foreach (var request in @Model.RequestList)
-        {
-            @if(request.Status == false)
+
+
+            <thead >
+                <tr>
+
+                    <th scope="col">Description</th>
+                    <th scope="col">Deadline</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Is it Done?</th>
+
+                </tr>
+            </thead>
+            @foreach (var request in @Model.RequestList)
             {
-                <tbody>
-                    <tr>
 
+                @if (request.Status == false)
+                {
+                    <tbody>
                         @if (request.TimeLeft.TotalHours <= 1)
                         {
-                            <td class="text-danger">@request.Description</td>
+                            <tr class="table-danger">
+                                <td>@request.Description</td>
+                                <td scope="row">@request.Deadline</td>
+                                <td>
+                                    @if (request.Status == false)
+                                    {
+                                        <p>This request still need to be done </p>
+                                    }
+                                </td>
+
+                                <td>
+                                    <form asp-route-itemid="@request.Id" method="post">
+                                        <div class="col-sm-offset-2 col-sm-8">
+                                            <input type="submit" value="Done" asp-route-id="@request.Id" class="btn btn-danger" />
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
                         }
                         else
                         {
-                            <td>@request.Description</td>
+                            <tr>
+                                <td>@request.Description</td>
+                                <td scope="row">@request.Deadline</td>
+                                <td>
+                                    @if (request.Status == false)
+                                    {
+                                        <p>This request still need to be done </p>
+                                    }
+                                </td>
+
+                                <td>
+                                    <form asp-route-itemid="@request.Id" method="post">
+                                        <div class="col-sm-offset-2 col-sm-8">
+                                            <input type="submit" value="Done" asp-route-id="@request.Id" class="btn btn-danger" />
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
                         }
-                        <td scope="row">@request.Deadline</td>
-                        <td>
-                            @if (request.Status == false)
-                            {
-                                <p>This request still need to be done </p>
-                            }
-                        </td>
+                    </tbody>
+                }
+                else
+                {
+                    continue;
+                }
 
-                        <td>
-                            <form asp-route-itemid="@request.Id" method="post">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <input type="submit" value="Done" asp-route-id="@request.Id" class="btn btn-danger" />
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
+
             }
-            else
-            {
-                continue;
-            }
-
-
+        </table>
     }
-    } else
+    else
     {
-        <h1 class="text-xl-center">Here is no requests, if you wish you can make one.</h1>
+        <h4 class="text-md-center">Here is no active requests, if you wish you can make one.</h4>
     }
 
-
-         
-</table>
 </body>

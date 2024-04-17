@@ -1,8 +1,11 @@
+using AgileWorksiTest.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddScoped<IRequestService, RequestService>();
+builder.Services.AddScoped<IHttpRequestService, HttpRequestService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

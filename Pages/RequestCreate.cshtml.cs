@@ -10,6 +10,7 @@ namespace AgileWorksiTest.Pages;
 [IgnoreAntiforgeryToken]
 public class RequestCreateModel : PageModel
 {
+    private readonly IRequestService _requestService;
     [BindProperty]
     public string Desc { get; set; }
     [BindProperty]
@@ -18,14 +19,14 @@ public class RequestCreateModel : PageModel
     public List<Request> RequestList { get; set; }
     [BindProperty]
     public string BaseUrl { get; set; } = "http://localhost:5091/api/request/";
-    public RequestCreateModel()
+    public RequestCreateModel(IRequestService requestService)
     {
-        
+        _requestService = requestService;
     }
 
     public async Task OnGet()
     {
-        var list = await RequestService.GetAllRequests(BaseUrl);
+        var list = await _requestService.GetAllRequests(BaseUrl);
         if (list != null)
         {
             RequestList = list;
@@ -38,12 +39,12 @@ public class RequestCreateModel : PageModel
         int id = 0;
         if (RequestList != null)
         {
-            int nextId = await RequestService.GiveId(BaseUrl);
+            int nextId = await _requestService.GiveId(BaseUrl);
             id = nextId;
         }
 
-        var newRequest = await RequestService.PostRequest(BaseUrl, new { Id = id,Description = Desc, WhenFinish = WhenFin});
-
+        var newRequest = await _requestService.PostRequest(BaseUrl, new { Id = id,Description = Desc, WhenFinish = WhenFin});
+        
         return RedirectToPage("Index");
 
     }
