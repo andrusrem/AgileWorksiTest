@@ -9,47 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AgileWorksiTest
 build_property.RootNamespace = AgileWorksiTest
-build_property.ProjectDir = C:\Users\andru\AgileWorksiTest\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = /Users/andrusremets/Desktop/AgileWorksiTest/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\andru\AgileWorksiTest
+build_property.MSBuildProjectDirectory = /Users/andrusremets/Desktop/AgileWorksiTest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/FinishedRequests.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmluaXNoZWRSZXF1ZXN0cy5jc2h0bWw=
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/FinishedRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmluaXNoZWRSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/RequestCreate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxdWVzdENyZWF0ZS5jc2h0bWw=
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/RequestCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVxdWVzdENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andru/AgileWorksiTest/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-g5gmwgmjkw
+[/Users/andrusremets/Desktop/AgileWorksiTest/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1y8dpyjedz

@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andru\\AgileWorksiTest\\AgileWorksiTest.csproj": {}
+    "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andru\\AgileWorksiTest\\AgileWorksiTest.csproj": {
+    "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andru\\AgileWorksiTest\\AgileWorksiTest.csproj",
+        "projectUniqueName": "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj",
         "projectName": "AgileWorksiTest",
-        "projectPath": "C:\\Users\\andru\\AgileWorksiTest\\AgileWorksiTest.csproj",
-        "packagesPath": "C:\\Users\\andru\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andru\\AgileWorksiTest\\obj\\",
+        "projectPath": "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj",
+        "packagesPath": "/Users/andrusremets/.nuget/packages/",
+        "outputPath": "/Users/andrusremets/Desktop/AgileWorksiTest/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\andru\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/andrusremets/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -116,24 +104,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.18, 7.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.18, 7.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.18, 7.0.18]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.18, 7.0.18]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -142,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }

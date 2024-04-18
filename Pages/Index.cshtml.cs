@@ -40,7 +40,6 @@ public class IndexModel : PageModel
         var request = await _requestService.GetRequest(baseUrl);
         request.Status = true;
         var change = await _requestService.PutRequest(baseUrl, request);
-        var newRequest = await _requestService.DeleteRequest(baseUrl);
         return RedirectToPage("Index");
     }
 }

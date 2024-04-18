@@ -8,24 +8,23 @@ namespace AgileWorksiTest.Controllers
     [ApiController]
     public class RequestController : ControllerBase
     {
-        public static List<Request> ActiveRequests = new List<Request>();
-        public static List<Request> FinishedRequests = new List<Request>();
+        public static List<Request> Requests = new List<Request>();
 
         [HttpGet]
         public IActionResult Get()
         {  
-            return Ok(ActiveRequests);
+            return Ok(Requests.Where(u => u.Status == false).ToList());
         }
         [HttpGet("finished")]
         public IActionResult GetFinished()
         {
-            return Ok(FinishedRequests);
+            return Ok(Requests.Where(u => u.Status == true).ToList());
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var request = ActiveRequests.Where(u => u.Id == id).FirstOrDefault();
+            var request = Requests.Where(u => u.Id == id).FirstOrDefault();
             if (request == null)
             {
                 return NotFound();
@@ -40,7 +39,7 @@ namespace AgileWorksiTest.Controllers
             {
                 return BadRequest();
             }
-            var savedRequest = ActiveRequests.Where(u => u.Id == id).FirstOrDefault();
+            var savedRequest = Requests.Where(u => u.Id == id).FirstOrDefault();
             try
             {
                 savedRequest.Status = request.Status;
@@ -62,21 +61,20 @@ namespace AgileWorksiTest.Controllers
         [HttpPost]
         public IActionResult Post(Request request)
         {
-            ActiveRequests.Add(request);
+            Requests.Add(request);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var request = ActiveRequests.Where(u => u.Id == id).FirstOrDefault();
+            var request = Requests.Where(u => u.Id == id).FirstOrDefault();
             if (request == null)
             {
                 return NotFound();
             }
             request.WhenMade = DateTime.Now;
-            FinishedRequests.Add(request);
-            ActiveRequests.Remove(request);
+            Requests.Remove(request);
             return NoContent();
         }
 
