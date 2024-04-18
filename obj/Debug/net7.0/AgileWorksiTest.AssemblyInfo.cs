@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgileWorksiTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65d3bc951dd1b22c54d4cfb3083e2905257e0c94")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgileWorksiTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgileWorksiTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

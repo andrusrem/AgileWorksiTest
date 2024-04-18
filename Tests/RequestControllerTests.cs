@@ -132,20 +132,10 @@ namespace AgileWorksiTest.Tests
                 WhenFinish = DateTime.UtcNow,
                 Status = true
             };
-            var savedRequest = new Request
-            {
-                Id = 0,
-                Description = "Test",
-                WhenMade = DateTime.UtcNow,
-                WhenFinish = DateTime.UtcNow,
-                Status = false
-            };
-            var post = _controller.Post(savedRequest) as OkResult;
-            var delete = _controller.Delete(id);
-
-            
             //Act
-            var result = _controller.Put(id, request) as IActionResult;
+            var result = _controller.Put(id, request);
+            
+            
             //Assert
             Assert.NotNull(result);
             Assert.IsType<NotFoundResult>(result);
