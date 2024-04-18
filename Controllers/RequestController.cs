@@ -13,12 +13,7 @@ namespace AgileWorksiTest.Controllers
         [HttpGet]
         public IActionResult Get()
         {  
-            return Ok(Requests.Where(u => u.Status == false).ToList());
-        }
-        [HttpGet("finished")]
-        public IActionResult GetFinished()
-        {
-            return Ok(Requests.Where(u => u.Status == true).ToList());
+            return Ok(Requests);
         }
 
         [HttpGet("{id}")]

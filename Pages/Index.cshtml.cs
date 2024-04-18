@@ -11,7 +11,7 @@ public class IndexModel : PageModel
     private readonly ILogger<IndexModel> _logger;
     private readonly IRequestService _requestService;
     [BindProperty]
-    public List<Request> RequestList { get; set; }
+    public List<Request>? RequestList { get; set; }
     [BindProperty]
     public string BaseUrl { get; set; } = "http://localhost:5091/api/request/";
     public IndexModel(ILogger<IndexModel> logger, IRequestService requestService)
@@ -24,17 +24,18 @@ public class IndexModel : PageModel
     {
 
         var list = await _requestService.GetAllRequests(BaseUrl);
-        
-        var orderedList = list.OrderBy(x => x.TimeLeft).ToList();
-        if(list != null)
+        var active = list.Where(u => u.Status == false).ToList();
+        var orderedList = active.OrderBy(x => x.TimeLeft).ToList();
+        if(active != null)
         {
             RequestList = orderedList;
         }
+        
             
         
     }
 
-    public async Task<IActionResult> OnPostAsync(int id)
+    public async Task<IActionResult> OnPost(int id)
     {
         var baseUrl = $"http://localhost:5091/api/request/{id}";
         var request = await _requestService.GetRequest(baseUrl);

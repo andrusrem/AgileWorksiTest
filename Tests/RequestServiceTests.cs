@@ -47,29 +47,6 @@ namespace AgileWorksiTest.Tests
             Assert.Equal(list.Count, result.Count);
         }
         [Fact]
-        public async Task GetAllFinishedRequests_return_all_requests()
-        {
-            //Arrange
-            string baseUrl = "http://localhost:5091/api/request/finished";
-            object data = null;
-            List<Request> list = new List<Request>{
-                new Request
-                {
-                    Id = 0,
-                    Description = "Test",
-                    WhenMade = DateTime.UtcNow,
-                    WhenFinish = DateTime.UtcNow,
-                    Status = true
-                }
-            };
-            _mockHttpRequestService.Setup(u => u.SendRequest<List<Request>>(baseUrl, HttpMethod.Get, data)).ReturnsAsync(list).Verifiable();
-            //Act
-            var result = await _service.GetAllFinishedRequests(baseUrl);
-
-            //Assert
-            Assert.Equal(list.Count, result.Count);
-        }
-        [Fact]
         public async Task GetRequest_return_needed_request()
         {
             //Arrange
