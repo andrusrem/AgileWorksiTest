@@ -12809,24 +12809,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/andrusremets/.nuget/packages/": {}
+    "C:\\Users\\andrus.remets\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj",
+      "projectUniqueName": "C:\\Users\\andrus.remets\\Source\\Repos\\AgileWorksiTest\\AgileWorksiTest.csproj",
       "projectName": "AgileWorksiTest",
-      "projectPath": "/Users/andrusremets/Desktop/AgileWorksiTest/AgileWorksiTest.csproj",
-      "packagesPath": "/Users/andrusremets/.nuget/packages/",
-      "outputPath": "/Users/andrusremets/Desktop/AgileWorksiTest/obj/",
+      "projectPath": "C:\\Users\\andrus.remets\\Source\\Repos\\AgileWorksiTest\\AgileWorksiTest.csproj",
+      "packagesPath": "C:\\Users\\andrus.remets\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andrus.remets\\Source\\Repos\\AgileWorksiTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/andrusremets/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\andrus.remets\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12919,7 +12921,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

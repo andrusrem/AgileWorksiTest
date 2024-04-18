@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.HttpResults;
 using AgileWorksiTest.Service;
 using AgileWorksiTest.Pages;
-
+using NuGet.Protocol;
 
 namespace AgileWorksiTest.Tests
 {
@@ -17,11 +17,9 @@ namespace AgileWorksiTest.Tests
     {
         private readonly RequestService _service;
         private readonly Mock<IHttpRequestService> _mockHttpRequestService;
-        private readonly RequestController _controller;
         public RequestServiceTests()
         {
             _mockHttpRequestService = new Mock<IHttpRequestService>();
-            _controller = new RequestController();
             _service = new RequestService(_mockHttpRequestService.Object);
         }
 
@@ -30,6 +28,75 @@ namespace AgileWorksiTest.Tests
         {
             //Arrange
             string baseUrl = "http://localhost:5091/api/request/";
+            object data = null;
+            List<Request> list = new List<Request>{
+                new Request
+                {
+                    Id = 0,
+                    Description = "Test",
+                    WhenMade = DateTime.UtcNow,
+                    WhenFinish = DateTime.UtcNow,
+                    Status = false
+                }
+            };
+            _mockHttpRequestService.Setup(u => u.SendRequest<List<Request>>(baseUrl, HttpMethod.Get, data)).ReturnsAsync(list).Verifiable();
+            //Act
+            var result = await _service.GetAllRequests(baseUrl);
+
+            //Assert
+            Assert.Equal(list.Count, result.Count);
+        }
+        [Fact]
+        public async Task GetAllFinishedRequests_return_all_requests()
+        {
+            //Arrange
+            string baseUrl = "http://localhost:5091/api/request/finished";
+            object data = null;
+            List<Request> list = new List<Request>{
+                new Request
+                {
+                    Id = 0,
+                    Description = "Test",
+                    WhenMade = DateTime.UtcNow,
+                    WhenFinish = DateTime.UtcNow,
+                    Status = true
+                }
+            };
+            _mockHttpRequestService.Setup(u => u.SendRequest<List<Request>>(baseUrl, HttpMethod.Get, data)).ReturnsAsync(list).Verifiable();
+            //Act
+            var result = await _service.GetAllFinishedRequests(baseUrl);
+
+            //Assert
+            Assert.Equal(list.Count, result.Count);
+        }
+        [Fact]
+        public async Task GetRequest_return_needed_request()
+        {
+            //Arrange
+            int id = 0;
+            string baseUrl = $"http://localhost:5091/api/request/{id}";
+            object data = null;
+            List<Request> list = new List<Request>{
+                new Request
+                {
+                    Id = 0,
+                    Description = "Test",
+                    WhenMade = DateTime.UtcNow,
+                    WhenFinish = DateTime.UtcNow,
+                    Status = true
+                }
+            };
+            _mockHttpRequestService.Setup(u => u.SendRequest<Request>(baseUrl, HttpMethod.Get, data)).ReturnsAsync(list.Where(x => x.Id == id).FirstOrDefault()).Verifiable();
+            //Act
+            var result = await _service.GetRequest(baseUrl);
+
+            //Assert
+            Assert.Equal(id, result.Id);
+        }
+        [Fact]
+        public async Task PostRequest_Return_Request_If_it_saved()
+        {
+            //Arrange
             var request = new Request
             {
                 Id = 0,
@@ -38,11 +105,36 @@ namespace AgileWorksiTest.Tests
                 WhenFinish = DateTime.UtcNow,
                 Status = false
             };
-            var post = _controller.Post(request) as OkResult;
+            object data = request.ToJson();
+            string baseUrl = "http://localhost:5091/api/request/";
+            _mockHttpRequestService.Setup(u => u.SendRequest<Request>(baseUrl, HttpMethod.Post, data)).ReturnsAsync(request).Verifiable();
             //Act
-            var result = await _service.GetAllRequests(baseUrl);
+            var result = await _service.PostRequest(baseUrl, data);
+
             //Assert
-            Assert.NotNull(result);
+            Assert.Equal(request, result);
+        }
+        [Fact]
+        public async Task GiveId_Return_Next_Id()
+        {
+            //Arrange
+            object data = null;
+            string baseUrl = "http://localhost:5091/api/request/";
+            List<Request> list = new List<Request>{
+                new Request
+                {
+                    Id = 0,
+                    Description = "Test",
+                    WhenMade = DateTime.UtcNow,
+                    WhenFinish = DateTime.UtcNow,
+                    Status = true
+                }
+            };
+            _mockHttpRequestService.Setup(u => u.SendRequest<List<Request>>(baseUrl, HttpMethod.Get, data)).ReturnsAsync(list).Verifiable();
+            //Act
+            var result = await _service.GiveId(baseUrl);
+            //Assert
+            Assert.Equal(list.Count, result);
         }
     }
 }
